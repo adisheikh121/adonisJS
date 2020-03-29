@@ -9,7 +9,7 @@ class File extends Model {
   }
 
   getUrl({ id }) {
-    return `${Env.get("APP_URL", "http://0.0.0.0:3333")}/files/${id}`;
+    return `${Env.get("APP_URL")}/files/${id}`;
   }
 }
 
