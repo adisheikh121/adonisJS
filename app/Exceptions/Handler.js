@@ -29,7 +29,7 @@ class ExceptionHandler extends BaseExceptionHandler {
     if (error.name === "ValidationException") {
       return response.status(error.status).send(error.messages);
     }
-    if (Env.get("NODE_ENV") === "develop") {
+    if (Env.get("NODE_ENV", "production") === "develop") {
       const youch = new Youch(error, request.request);
       const errorJSON = await youch.toJSON();
       return response.status(error.status).send(errorJSON);
