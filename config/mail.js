@@ -12,7 +12,7 @@ module.exports = {
   | define a driver too.
   |
   */
-  connection: Env.get("MAIL_CONNECTION", "smtp"),
+  connection: Env.get("MAIL_CONNECTION"),
 
   /*
   |--------------------------------------------------------------------------
@@ -26,11 +26,11 @@ module.exports = {
     driver: "smtp",
     pool: true,
     port: Env.get("MAIL_PORT", 2525),
-    host: Env.get("MAIL_HOST", "smtp.mailtrap.io"),
+    host: Env.get("MAIL_HOST"),
     secure: false,
     auth: {
-      user: Env.get("MAIL_USERNAME", "9b22a7304d3fcd"),
-      pass: Env.get("MAIL_PASSWORD", "5cf7bbd3ed7def")
+      user: Env.get("MAIL_USERNAME"),
+      pass: Env.get("MAIL_PASSWORD")
     },
     maxConnections: 5,
     maxMessages: 100,
@@ -55,7 +55,7 @@ module.exports = {
   */
   sparkpost: {
     driver: "sparkpost",
-    apiKey: Env.get("SPARKPOST_API_KEY", ""),
+    apiKey: Env.get("SPARKPOST_API_KEY"),
     extras: {}
   },
 
@@ -78,9 +78,9 @@ module.exports = {
   */
   mailgun: {
     driver: "mailgun",
-    domain: Env.get("MAILGUN_DOMAIN", ""),
-    region: Env.get("MAILGUN_API_REGION", ""),
-    apiKey: Env.get("MAILGUN_API_KEY", ""),
+    domain: Env.get("MAILGUN_DOMAIN"),
+    region: Env.get("MAILGUN_API_REGION"),
+    apiKey: Env.get("MAILGUN_API_KEY"),
     extras: {}
   },
 
